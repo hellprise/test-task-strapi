@@ -787,12 +787,23 @@ export interface ApiLinksListLinksList extends Schema.SingleType {
     singularName: 'links-list';
     pluralName: 'links-lists';
     displayName: 'LinksList';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    List: Attribute.Component<'list.links-list'>;
+    List: Attribute.Component<'list.links-list'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -808,6 +819,12 @@ export interface ApiLinksListLinksList extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::links-list.links-list',
+      'oneToMany',
+      'api::links-list.links-list'
+    >;
+    locale: Attribute.String;
   };
 }
 

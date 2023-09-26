@@ -4,17 +4,27 @@
   "info": {
     "singularName": "links-list",
     "pluralName": "links-lists",
-    "displayName": "LinksList"
+    "displayName": "LinksList",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "List": {
       "type": "component",
       "repeatable": false,
-      "component": "list.links-list"
+      "component": "list.links-list",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
