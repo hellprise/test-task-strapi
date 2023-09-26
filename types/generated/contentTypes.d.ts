@@ -742,7 +742,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     name: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     slug: Attribute.String &
