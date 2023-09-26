@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "links_lists",
+  "info": {
+    "singularName": "links-list",
+    "pluralName": "links-lists",
+    "displayName": "LinksList"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "List": {
+      "type": "component",
+      "repeatable": false,
+      "component": "list.links-list"
+    }
+  }
+}

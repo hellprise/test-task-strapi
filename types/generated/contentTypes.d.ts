@@ -781,6 +781,36 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiLinksListLinksList extends Schema.SingleType {
+  collectionName: 'links_lists';
+  info: {
+    singularName: 'links-list';
+    pluralName: 'links-lists';
+    displayName: 'LinksList';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    List: Attribute.Component<'list.links-list'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::links-list.links-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::links-list.links-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
@@ -876,6 +906,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::carousel.carousel': ApiCarouselCarousel;
       'api::category.category': ApiCategoryCategory;
+      'api::links-list.links-list': ApiLinksListLinksList;
       'api::product.product': ApiProductProduct;
     }
   }
