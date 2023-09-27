@@ -1,5 +1,17 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface LayoutColumn extends Schema.Component {
+  collectionName: 'components_layout_columns';
+  info: {
+    displayName: 'Column';
+    icon: 'dashboard';
+  };
+  attributes: {
+    title: Attribute.String;
+    items: Attribute.Component<'list.link', true>;
+  };
+}
+
 export interface ListLink extends Schema.Component {
   collectionName: 'components_list_links';
   info: {
@@ -40,6 +52,7 @@ export interface SliderSlide extends Schema.Component {
 declare module '@strapi/strapi' {
   export module Shared {
     export interface Components {
+      'layout.column': LayoutColumn;
       'list.link': ListLink;
       'list.links-list': ListLinksList;
       'slider.slide': SliderSlide;
