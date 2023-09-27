@@ -833,6 +833,7 @@ export interface ApiHeaderHeader extends Schema.SingleType {
     singularName: 'header';
     pluralName: 'headers';
     displayName: 'Header';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -843,7 +844,7 @@ export interface ApiHeaderHeader extends Schema.SingleType {
     };
   };
   attributes: {
-    Nav: Attribute.Component<'list.links-list'> &
+    NavLink: Attribute.Component<'layout.test-list', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

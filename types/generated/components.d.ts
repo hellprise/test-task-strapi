@@ -12,6 +12,28 @@ export interface LayoutColumn extends Schema.Component {
   };
 }
 
+export interface LayoutNavbar extends Schema.Component {
+  collectionName: 'components_layout_navbars';
+  info: {
+    displayName: 'Navbar';
+  };
+  attributes: {
+    test: Attribute.String;
+  };
+}
+
+export interface LayoutTestList extends Schema.Component {
+  collectionName: 'components_layout_test_lists';
+  info: {
+    displayName: 'TestList';
+  };
+  attributes: {
+    name: Attribute.String;
+    slug: Attribute.String;
+    submenu: Attribute.Component<'list.link', true>;
+  };
+}
+
 export interface ListLink extends Schema.Component {
   collectionName: 'components_list_links';
   info: {
@@ -53,6 +75,8 @@ declare module '@strapi/strapi' {
   export module Shared {
     export interface Components {
       'layout.column': LayoutColumn;
+      'layout.navbar': LayoutNavbar;
+      'layout.test-list': LayoutTestList;
       'list.link': ListLink;
       'list.links-list': ListLinksList;
       'slider.slide': SliderSlide;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "header",
     "pluralName": "headers",
-    "displayName": "Header"
+    "displayName": "Header",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,15 +16,16 @@
     }
   },
   "attributes": {
-    "Nav": {
+    "NavLink": {
+      "displayName": "TestList",
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "list.links-list"
+      "component": "layout.test-list"
     }
   }
 }
